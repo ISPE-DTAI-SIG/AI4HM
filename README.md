@@ -29,6 +29,12 @@ Developed by the **ISPE Digital Technology & AI Special Interest Group (DTAI SIG
 AI4HM authoring effort to support reproducible, transparent reporting of AI/ML studies in health and
 medicine.
 
+## License
+
+This work is licensed under the
+[Creative Commons Attribution 4.0 International License (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/).
+See [`LICENSE`](LICENSE) for details.
+
 ---
 
 *The interactive page is a single self-contained HTML file. To preview locally, open `index.html`
