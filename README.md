@@ -13,15 +13,25 @@ This repository hosts the interactive web version of the template, published via
 
 ## 📄 Download the template
 
-A Microsoft Word version (`.docx`, v0.2) is available from the **Download .docx** button on the live
-page, or directly at [`assets/AI4HM-Protocol-Template-v0.2.docx`](assets/AI4HM-Protocol-Template-v0.2.docx).
+The template ships as two Microsoft Word documents, both linked from the **Download** section of the
+live page:
+
+- [`assets/AI4HM-Protocol-Template-v0.3.docx`](assets/AI4HM-Protocol-Template-v0.3.docx) — the
+  template itself (current version).
+- [`assets/AI4HM-About-v0.3.docx`](assets/AI4HM-About-v0.3.docx) — companion document with the
+  about/scope notes, instructions for using the template, glossary, and acknowledgements.
 
 ## Repository contents
 
 | File | Description |
 | --- | --- |
-| `index.html` | Self-contained interactive protocol template (single file; renders the full docs). |
-| `assets/AI4HM-Protocol-Template-v0.2.docx` | Downloadable Word version of the template. |
+| `index.html` | Static interactive page for the protocol template. |
+| `assets/AI4HM-Protocol-Template-v0.3.docx` | Word version of the template (current). |
+| `assets/AI4HM-About-v0.3.docx` | Word companion: about, instructions, glossary, acknowledgements. |
+| `assets/AI4HM-Protocol-Template-v0.2.docx` | Previous version, kept for the version history. |
+| `assets/fonts/` | Self-hosted IBM Plex Sans and Spectral subsets used by the page. |
+| `assets/img/` | AI4HM wordmark and tagline artwork. |
+| `assets/js/hero-globe.js` | Canvas node-network animation behind the hero wordmark. |
 
 ## About
 
@@ -37,5 +47,5 @@ See [`LICENSE`](LICENSE) for details.
 
 ---
 
-*The interactive page is a single self-contained HTML file. To preview locally, open `index.html`
-in a browser, or serve the folder (e.g. `python3 -m http.server`) so the document download resolves.*
+*To preview locally, serve the folder (e.g. `python3 -m http.server`) and open
+`http://localhost:8000/` so the fonts, images, and document downloads resolve.*
