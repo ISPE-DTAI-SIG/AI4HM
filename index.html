@@ -581,6 +581,7 @@
   .ver .badge.cur{background:var(--accent-soft);color:var(--accent);border:1px solid #cfe;}
   .ver .badge.cur{border-color:#cdddf4;}
   .ver .badge.old{background:var(--side);color:var(--muted);border:1px solid var(--line);}
+  .ver .vrev{display:block;margin-top:6px;font-size:13px;color:var(--muted);opacity:.85;}
   .ver .vdl{font-size:12.5px;text-decoration:none;color:var(--accent);white-space:nowrap;}
   .ver .vdl:hover{text-decoration:underline;}
   .ver-note{margin-top:16px;color:var(--muted);font-size:15px;}
@@ -756,20 +757,20 @@
       <details class="item"><summary><span class="num">8</span><span class="ttl">Study Objectives</span><span class="chev">›</span></summary><div class="body">Primary, secondary, and exploratory objectives — presented in a structured table linking each <b>Objective</b> to its <b>Population(s)</b> and <b>Metric(s)</b>.</div></details>
       <details class="item"><summary><span class="num">9</span><span class="ttl">Research Methods</span><span class="chev">›</span></summary><div class="body">The methodological core of the protocol, organized into modular sub-sections included as relevant:
         <ul>
-          <li><b>Existing Data Sources</b> — registries, EHR, claims, prior study data; validity, accuracy, provenance.</li>
-          <li><b>Original Data Collection</b> — new data from participants or human raters; ethics, consent, rater qualifications.</li>
+          <li><b>Existing Data Sources</b> — registries, EHR, claims, prior study data; validity, accuracy, provenance, and data governance.</li>
+          <li><b>Original Data Collection</b> — new data from participants or human raters; ethics, consent, rater qualifications, and adjudication processes.</li>
           <li><b>Data Cleaning &amp; Transformation</b> — preparation, common data models (OMOP, FHIR), quality procedures, linkage.</li>
           <li><b>Model Development — Study Design &amp; Setting</b> — design classification, target vs. training population, selection criteria, time periods, design diagram.</li>
           <li><b>Model Development — Training Task &amp; Outcome Label</b> — task setup, label definition, rater credentials and annotation, label validation.</li>
           <li><b>Model Development — Features</b> — high-level feature types; an exhaustive list is not required, recognizing selection as iterative.</li>
-          <li><b>Model Development — Training &amp; Fine-tuning</b> — iterative development, architectures, ensembling, cross-validation, software.</li>
-          <li><b>Evaluation — Study Design &amp; Setting</b> — design and rationale, comparators, evaluation populations and subgroups, external validity.</li>
+          <li><b>Model Development — Training &amp; Fine-tuning</b> — iterative development, architectures, ensembling, cross-validation, software, and model version control.</li>
+          <li><b>Evaluation — Study Design &amp; Setting</b> — design and rationale, comparators, determination of ground truth or a gold standard, evaluation populations and subgroups, external validity, and prompting and human-in-the-loop practices for large language models and agentic AI systems.</li>
           <li><b>Evaluation — Metrics</b> — performance metrics matched to objectives, with rationale and references.</li>
-          <li><b>Evaluation — Analyses</b> — descriptive analyses, statistical tests, confidence intervals, fairness and bias analyses, software.</li>
-          <li><b>Sample Size Calculations</b> — power and sample size with assumptions and justifications.</li>
+          <li><b>Evaluation — Analyses</b> — descriptive analyses, whether evaluation data was used in training, statistical tests, confidence intervals, fairness and bias analyses, software.</li>
+          <li><b>Sample Size Rationale &amp; Calculations</b> — power and sample size with assumptions and justifications.</li>
         </ul>
       </div></details>
-      <details class="item"><summary><span class="num">10</span><span class="ttl">Data Management</span><span class="chev">›</span></summary><div class="body">Data transfer, storage, backup, and security, alongside model version control.</div></details>
+      <details class="item"><summary><span class="num">10</span><span class="ttl">Data Management</span><span class="chev">›</span></summary><div class="body">Data management and data governance procedures — transfer, storage, backup, and security, alongside model version control.</div></details>
       <details class="item"><summary><span class="num">11</span><span class="ttl">Limitations</span><span class="chev">›</span></summary><div class="body">Data source, study design, model development, and analytic-method limitations, with mitigation steps.</div></details>
       <details class="item"><summary><span class="num">12</span><span class="ttl">Protection of Human Subjects</span><span class="chev">›</span></summary><div class="body">Legal compliance, data privacy, and ethics review, including exemption status where applicable.</div></details>
       <details class="item"><summary><span class="num">13</span><span class="ttl">Adverse Events</span><span class="chev">›</span></summary><div class="body">For patient-facing tools: adverse-event collection, management, and reporting, with regulatory requirements noted.</div></details>
@@ -825,7 +826,7 @@
       <p class="kicker" style="font-size: 20px">Version history</p>
       <h2>A living document</h2>
       <div class="ver">
-        <div class="v"><span class="vn">v0.3</span><span class="vd">Adds an optional <b>Other considerations</b> section — patient and public involvement, multistakeholder engagement, post-deployment monitoring and model drift, traceability, and model cards — with matching glossary entries.</span><span class="badge cur">Current</span></div>
+        <div class="v"><span class="vn">v0.3</span><span class="vd">Adds an optional <b>Other considerations</b> section — patient and public involvement, multistakeholder engagement, post-deployment monitoring and model drift, traceability, and model cards — with matching glossary entries. Confirms the template's scope as <b>observational study designs</b> by removing references to randomized trials. Strengthens the evaluation guidance with determination of ground truth or a gold standard, prompting and human-in-the-loop practices for large language models and agentic AI systems, and an explicit statement of whether evaluation data was used in training. Adds data governance to existing data sources and to data management, adjudication processes to rater-collected data, and model version control to training and fine-tuning.<span class="vrev">Revised 10 August 2026 — incorporates a round of authoring-team feedback omitted from the first v0.3 release, and corrects the Table of Contents pagination. If you downloaded v0.3 before this date, please replace your copy.</span></span><span class="badge cur">Current</span></div>
         <div class="v"><span class="vn">v0.2</span><span class="vd">Released for community feedback.</span><a class="vdl" href="assets/AI4HM-Protocol-Template-v0.2.docx" download="">↓ .docx</a><span class="badge old">Archived</span></div>
         <div class="v"><span class="vn">v0.1</span><span class="vd">Initial internal draft.</span><span class="badge old">Archived</span></div>
       </div>
