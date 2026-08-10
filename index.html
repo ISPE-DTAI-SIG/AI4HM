@@ -448,23 +448,26 @@
   a{color:var(--accent);}
 
   /* hero band */
-  .hero{position:relative;overflow:hidden;background:var(--navy);color:#fff;padding:clamp(46px,7vw,72px) 0 clamp(42px,6vw,64px);
+  .hero{position:relative;overflow:hidden;background:var(--navy);color:#fff;padding:clamp(30px,4vw,44px) 0 clamp(28px,3.6vw,40px);
     background-image:radial-gradient(ellipse 52% 62% at 27% 54%, rgba(74,116,210,.30), transparent 62%),radial-gradient(circle at 88% 14%, rgba(63,103,168,.24),transparent 55%);}
-  .hero-in{position:relative;z-index:1;max-width:1180px;margin:0 auto;padding:0 clamp(20px,5vw,40px);}
+  /* two columns: the mark and its blurb on the left, the actions and metadata
+     on the right, so the band stays short and the open navy on the right fills */
+  .hero-in{position:relative;z-index:1;max-width:1180px;margin:0 auto;padding:0 clamp(20px,5vw,40px);
+    display:grid;grid-template-columns:minmax(0,1fr) auto;gap:clamp(24px,4vw,60px);align-items:center;}
+  .hero-main{min-width:0;}
+  .hero-side{display:flex;flex-direction:column;gap:16px;width:clamp(210px,20vw,248px);}
   /* entrance — only armed once JS adds .fx-on, so content is visible by default */
   @keyframes heroRise{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:none;}}
-  .fx-on .hero-in>*{animation:heroRise .7s cubic-bezier(.22,.61,.36,1) both;}
-  .fx-on .hero-in>.eyebrow{animation-delay:.05s;}
-  .fx-on .hero-in>.hero-logo{animation-delay:.18s;}
-  .fx-on .hero-in>.hero-tag{animation-delay:.3s;}
-  .fx-on .hero-in>.full{animation-delay:.42s;}
-  .fx-on .hero-in>.cta{animation-delay:.54s;}
-  .fx-on .hero-in>.tags{animation-delay:.64s;}
-  @media(prefers-reduced-motion:reduce){.fx-on .hero-in>*{animation:none;}}
+  .fx-on .hero-in>*>*{animation:heroRise .7s cubic-bezier(.22,.61,.36,1) both;}
+  .fx-on .hero-main>.hero-logo{animation-delay:.1s;}
+  .fx-on .hero-main>.full{animation-delay:.24s;}
+  .fx-on .hero-side>.cta{animation-delay:.36s;}
+  .fx-on .hero-side>.tags{animation-delay:.46s;}
+  @media(prefers-reduced-motion:reduce){.fx-on .hero-in>*>*{animation:none;}}
   .eyebrow{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#8fb0e6;font-weight:600;margin:0 0 20px;display:flex;align-items:center;gap:12px;}
   .eyebrow .mk{width:18px;height:18px;background:#fff;transform:rotate(45deg);display:inline-block;}
   .hero h1{font-size:68px;line-height:1;font-weight:700;letter-spacing:-.015em;color:#fff;margin:0 0 22px;}
-  .hero-logo{display:block;width:min(440px,82%);margin:0 0 30px;}
+  .hero-logo{display:block;width:min(360px,80%);margin:0 0 20px;}
   .lockup{position:relative;width:100%;}
   .hero .globe3d{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
     width:600px;height:600px;max-width:none;z-index:0;pointer-events:none;}
@@ -472,20 +475,23 @@
     transform:translate(-50%,-50%);pointer-events:none;
     background:radial-gradient(circle,rgba(72,128,224,.34) 0%,rgba(96,108,224,.12) 42%,transparent 70%);
     filter:blur(54px);}
-  .globe3d .node-canvas{position:absolute;inset:0;width:100%;height:100%;display:block;}
+  .globe3d .node-canvas{position:absolute;inset:0;width:100%;height:100%;display:block;opacity:.78;}
   .lockup .mark-word{position:relative;display:block;width:90%;margin:0 auto;z-index:1;
     height:auto;pointer-events:none;
     filter:drop-shadow(0 2px 16px rgba(8,16,36,.82));}
   .hero-logo .mark-tag{display:block;width:100%;height:auto;margin:14px 0 0;}
   .hero-tag{font-size:20px;line-height:1.3;color:#cdd9ee;font-weight:500;letter-spacing:.01em;margin:0 0 28px;font-family:"IBM Plex Sans",sans-serif;}
-  .hero .full{font-size:clamp(17px,2.3vw,21px);line-height:1.5;color:#d3ddee;max-width:680px;margin:0 0 32px;font-family:"Spectral",serif;font-weight:400;}
+  .hero .full{font-size:clamp(16px,1.6vw,18.5px);line-height:1.5;color:#d3ddee;max-width:540px;margin:0;font-family:"Spectral",serif;font-weight:400;}
   .cta{display:flex;gap:13px;flex-wrap:wrap;}
+  .hero-side .cta{flex-direction:column;gap:10px;}
+  .hero-side .cta .btn{width:100%;font-size:15px;}
   .btn{font-size:14px;font-weight:500;text-decoration:none;padding:13px 24px;border-radius:8px;display:inline-flex;align-items:center;justify-content:center;gap:9px;transition:.16s;white-space:nowrap;min-height:44px;}
   .btn.primary{background:#fff;color:var(--navy);}
   .btn.primary:hover{background:#e6edf8;}
   .btn.ghost{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.35);}
   .btn.ghost:hover{border-color:#fff;background:rgba(255,255,255,.08);}
-  .hero .tags{display:flex;gap:22px;margin-top:34px;font-size:13px;color:#9fb1cf;flex-wrap:wrap;}
+  .hero .tags{display:flex;flex-direction:column;gap:7px;margin:2px 0 0;font-size:13px;color:#9fb1cf;
+    padding-top:14px;border-top:1px solid rgba(255,255,255,.14);}
   .hero .tags b{color:#fff;font-weight:600;}
 
   /* layout */
@@ -613,9 +619,14 @@
     .side{display:none;}
     .aud{grid-template-columns:1fr 1fr;}
     main{padding:36px 0 16px;}
+    /* one column again — the side rail has nowhere to sit */
+    .hero-in{grid-template-columns:1fr;gap:24px;}
+    .hero-side{width:100%;}
+    .hero-side .cta{flex-direction:row;flex-wrap:wrap;}
+    .hero-side .cta .btn{width:auto;}
+    .hero .tags{flex-direction:row;flex-wrap:wrap;gap:20px;}
   }
   @media(max-width:620px){
-    .hero .tags{gap:14px 18px;margin-top:26px;}
     .cta{gap:10px;}
     .cta .btn{flex:1 1 auto;justify-content:center;}
     .aud{grid-template-columns:1fr;}
@@ -663,19 +674,25 @@
     <canvas class="node-canvas"></canvas>
   </div>
   <div class="hero-in">
-    <div class="hero-logo">
-      <div class="lockup">
-        <img class="mark-word" src="assets/img/ai4hm-wordmark.png" alt="AI4HM">
+    <div class="hero-main">
+      <div class="hero-logo">
+        <div class="lockup">
+          <img class="mark-word" src="assets/img/ai4hm-wordmark.png" alt="AI4HM">
+        </div>
+        <img class="mark-tag" src="assets/img/ai4hm-tagline.png" alt="Artificial Intelligence for Health and Medicine">
       </div>
-      <img class="mark-tag" src="assets/img/ai4hm-tagline.png" alt="Artificial Intelligence for Health and Medicine">
+      <p class="full">A protocol template for observational studies that develop, validate, or evaluate AI/ML-based models, algorithms, and tools in health and medicine.</p>
     </div>
-    <p class="full">A protocol template for observational studies that develop, validate, or evaluate AI/ML-based models, algorithms, and tools in health and medicine.</p>
-    <div class="cta">
-      <a class="btn primary" href="#contents" style="font-size: 16px">Read the template</a>
-      <a class="btn ghost" href="assets/AI4HM-Protocol-Template-v0.3.docx" download="" style="font-size: 16px">↓ Download v0.3 (.docx)</a>
+    <div class="hero-side">
+      <div class="cta">
+        <a class="btn primary" href="#contents">Read the template</a>
+        <a class="btn ghost" href="assets/AI4HM-Protocol-Template-v0.3.docx" download="">↓ Download v0.3 (.docx)</a>
+      </div>
+      <div class="tags">
+        <span>Version <b>0.3</b></span>
+        <span>License:&nbsp;Freely available</span>
+      </div>
     </div>
-    <div class="tags"><span style="font-size: 16px">Version <b>0.3</b></span><span>
-</span><span style="font-size: 16px">License:&nbsp;Freely available</span></div>
   </div>
 </header>
 

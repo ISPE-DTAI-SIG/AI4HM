@@ -57,6 +57,14 @@
      Used both to draw the sphere AND to size the globe so its bottom node
      lands on the middle of the primary CTA pill (responsive, any width). */
   var RFAC = 0.37;
+  /* node-cloud diameter as a fraction of the banner height. Below 1 the sphere
+     sits inset from the top and bottom edges instead of spanning them, so it
+     reads as a backdrop to the wordmark rather than as the banner itself. */
+  var SPAN = 0.84;
+  /* ...but never wider than this fraction of the banner. Narrow screens stack
+     the banner content, making it tall; without the cap the sphere would grow
+     with that height and swamp the text it sits behind. */
+  var WSPAN = 0.62;
   var w, h, cx, cy, R, dpr;
   var globeEl = canvas.closest ? canvas.closest('.globe3d') : canvas.parentElement;
 
@@ -66,9 +74,10 @@
     var word = document.querySelector('.mark-word');
     if (!hero || !word) return;
     var hr = hero.getBoundingClientRect(), wr = word.getBoundingClientRect();
-    /* node-cloud diameter (2*RFAC*size) spans the full hero height:
-       top node touches the banner top, bottom node the banner bottom */
-    var size = Math.round(hr.height / (2 * RFAC));
+    /* node-cloud diameter (2*RFAC*size) is SPAN x the hero height, capped to
+       WSPAN x its width */
+    var cloud = Math.min(hr.height * SPAN, hr.width * WSPAN);
+    var size = Math.round(cloud / (2 * RFAC));
     globeEl.style.width = size + 'px';
     globeEl.style.height = size + 'px';
     globeEl.style.top = '50%';                                  // vertical centre of the hero
