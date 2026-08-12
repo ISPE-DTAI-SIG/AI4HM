@@ -724,8 +724,8 @@
       <p class="kicker" style="font-size: 20px">What it is</p>
       <h2>Structure where you need it, flexibility where the science demands it.</h2>
       <p class="lead" style="font-size: 24px">Protocols are living documents that describe the intended conduct of a study. Having a pre-specified protocol is scientific best practice, and is commonly expected by data stewards, ethics boards, journals, and other research stakeholders.</p>
-      <p style="font-size: 24px">Existing templates — such as the EU PAS Register template and <b>HARPER</b> — were built for real-world evidence studies with pre-specified analyses and well-defined components. They do not fully address the iterative development, validation, and deployment considerations unique to AI/ML research.</p>
-      <p style="font-size: 24px"><b>AI4HM</b> is a fit-for-purpose template that provides structure while preserving methodological flexibility — accommodating iterative model development, feature engineering as part of the research process, multiple validation stages, performance metrics beyond traditional epidemiology, and fairness, bias, and interpretability considerations.</p>
+      <p style="font-size: 24px">Existing templates, such as the EU PAS Register template and <b>HARPER</b>, were built for real-world evidence studies with pre-specified analyses and well-defined components. They do not fully address the iterative development, validation, and deployment considerations unique to AI/ML research.</p>
+      <p style="font-size: 24px"><b>AI4HM</b> is a fit-for-purpose template that provides structure while preserving methodological flexibility. It accommodates iterative model development, feature engineering as part of the research process, multiple validation stages, performance metrics beyond traditional epidemiology, and fairness, bias, and interpretability considerations.</p>
       <div class="principles"><span style="font-size: 14px">Modular</span><span style="font-size: 14px">Flexible with rigor</span><span style="font-size: 14px">Downstream-compatible</span><span style="font-size: 14px">Accessible</span><span style="font-size: 14px">Living document</span></div>
       <div class="callout"><b>Scope note.</b> This template is not designed for studies that support regulatory submissions or that are considered Software as a Medical Device (SaMD). Support for regulatory submissions is planned for future versions.</div>
     </section>
@@ -754,34 +754,34 @@
       <details class="item"><summary><span class="num">5</span><span class="ttl">Milestones</span><span class="opt">Optional</span><span class="chev">›</span></summary><div class="body">Key project milestones and timelines, where useful to the audience.</div></details>
       <details class="item"><summary><span class="num">6</span><span class="ttl">Background &amp; Rationale</span><span class="chev">›</span></summary><div class="body">The problem or unmet need the AI/ML tool addresses, existing tools and approaches, current gaps and limitations, and how this research addresses them.</div></details>
       <details class="item"><summary><span class="num">7</span><span class="ttl">Study Scope &amp; Intended Use</span><span class="opt">Optional</span><span class="chev">›</span></summary><div class="body">Intended-use context, setting restrictions, and out-of-scope areas for the tool.</div></details>
-      <details class="item"><summary><span class="num">8</span><span class="ttl">Study Objectives</span><span class="chev">›</span></summary><div class="body">Primary, secondary, and exploratory objectives — presented in a structured table linking each <b>Objective</b> to its <b>Population(s)</b> and <b>Metric(s)</b>.</div></details>
+      <details class="item"><summary><span class="num">8</span><span class="ttl">Study Objectives</span><span class="chev">›</span></summary><div class="body">Primary, secondary, and exploratory objectives, presented in a structured table linking each <b>Objective</b> to its <b>Population(s)</b> and <b>Metric(s)</b>.</div></details>
       <details class="item"><summary><span class="num">9</span><span class="ttl">Research Methods</span><span class="chev">›</span></summary><div class="body">The methodological core of the protocol, organized into modular sub-sections included as relevant:
         <ul>
-          <li><b>Existing Data Sources</b> — registries, EHR, claims, prior study data; validity, accuracy, provenance, and data governance.</li>
-          <li><b>Original Data Collection</b> — new data from participants or human raters; ethics, consent, rater qualifications, and adjudication processes.</li>
-          <li><b>Data Cleaning &amp; Transformation</b> — preparation, common data models (OMOP, FHIR), quality procedures, linkage.</li>
-          <li><b>Model Development — Study Design &amp; Setting</b> — design classification, target vs. training population, selection criteria, time periods, design diagram.</li>
-          <li><b>Model Development — Training Task &amp; Outcome Label</b> — task setup, label definition, rater credentials and annotation, label validation.</li>
-          <li><b>Model Development — Features</b> — high-level feature types; an exhaustive list is not required, recognizing selection as iterative.</li>
-          <li><b>Model Development — Training &amp; Fine-tuning</b> — iterative development, architectures, ensembling, cross-validation, software, and model version control.</li>
-          <li><b>Evaluation — Study Design &amp; Setting</b> — design and rationale, comparators, determination of ground truth or a gold standard, evaluation populations and subgroups, external validity, and prompting and human-in-the-loop practices for large language models and agentic AI systems.</li>
-          <li><b>Evaluation — Metrics</b> — performance metrics matched to objectives, with rationale and references.</li>
-          <li><b>Evaluation — Analyses</b> — descriptive analyses, whether evaluation data was used in training, statistical tests, confidence intervals, fairness and bias analyses, software.</li>
-          <li><b>Sample Size Rationale &amp; Calculations</b> — power and sample size with assumptions and justifications.</li>
+          <li><b>Existing Data Sources.</b> Registries, EHR, claims, prior study data; validity, accuracy, provenance, and data governance.</li>
+          <li><b>Original Data Collection.</b> New data from participants or human raters; ethics, consent, rater qualifications, and adjudication processes.</li>
+          <li><b>Data Cleaning &amp; Transformation.</b> Preparation, common data models (OMOP, FHIR), quality procedures, linkage.</li>
+          <li><b>Model Development: Study Design &amp; Setting.</b> Design classification, target vs. training population, selection criteria, time periods, design diagram.</li>
+          <li><b>Model Development: Training Task &amp; Outcome Label.</b> Task setup, label definition, rater credentials and annotation, label validation.</li>
+          <li><b>Model Development: Features.</b> High-level feature types; an exhaustive list is not required, recognizing selection as iterative.</li>
+          <li><b>Model Development: Training &amp; Fine-tuning.</b> Iterative development, architectures, ensembling, cross-validation, software, and model version control.</li>
+          <li><b>Evaluation: Study Design &amp; Setting.</b> Design and rationale, comparators, determination of ground truth or a gold standard, evaluation populations and subgroups, external validity, and prompting and human-in-the-loop practices for large language models and agentic AI systems.</li>
+          <li><b>Evaluation: Metrics.</b> Performance metrics matched to objectives, with rationale and references.</li>
+          <li><b>Evaluation: Analyses.</b> Descriptive analyses, whether evaluation data was used in training, statistical tests, confidence intervals, fairness and bias analyses, software.</li>
+          <li><b>Sample Size Rationale &amp; Calculations.</b> Power and sample size with assumptions and justifications.</li>
         </ul>
       </div></details>
-      <details class="item"><summary><span class="num">10</span><span class="ttl">Data Management</span><span class="chev">›</span></summary><div class="body">Data management and data governance procedures — transfer, storage, backup, and security, alongside model version control.</div></details>
+      <details class="item"><summary><span class="num">10</span><span class="ttl">Data Management</span><span class="chev">›</span></summary><div class="body">Data management and data governance procedures for transfer, storage, backup, and security, alongside model version control.</div></details>
       <details class="item"><summary><span class="num">11</span><span class="ttl">Limitations</span><span class="chev">›</span></summary><div class="body">Data source, study design, model development, and analytic-method limitations, with mitigation steps.</div></details>
       <details class="item"><summary><span class="num">12</span><span class="ttl">Protection of Human Subjects</span><span class="chev">›</span></summary><div class="body">Legal compliance, data privacy, and ethics review, including exemption status where applicable.</div></details>
       <details class="item"><summary><span class="num">13</span><span class="ttl">Adverse Events</span><span class="chev">›</span></summary><div class="body">For patient-facing tools: adverse-event collection, management, and reporting, with regulatory requirements noted.</div></details>
       <details class="item"><summary><span class="num">14</span><span class="ttl">Plans for Communicating Results</span><span class="opt">Optional</span><span class="chev">›</span></summary><div class="body">How and where results will be disseminated.</div></details>
       <details class="item"><summary><span class="num">15</span><span class="ttl">Other Considerations</span><span class="opt">Optional</span><span class="chev">›</span></summary><div class="body">Topics that are not required elements of a protocol, kept brief and high-level, for authors to address where relevant to the study and its intended use:
         <ul>
-          <li><b>Patient &amp; public involvement</b> — involvement of patients, carers, or the public in shaping the question, outcomes, conduct, or dissemination.</li>
-          <li><b>Multistakeholder engagement</b> — input from clinicians and other intended end users, data stewards, informaticians, health system leaders, developers, or regulators, and where in the lifecycle it occurred.</li>
-          <li><b>Post-deployment monitoring &amp; model drift</b> — anticipated performance monitoring, drift detection, and what would prompt re-training.</li>
-          <li><b>Traceability</b> — audit logs, version control for models and datasets, and records of model updates.</li>
-          <li><b>Model cards</b> — an existing or planned model card, referenced here and included as an appendix.</li>
+          <li><b>Patient &amp; public involvement.</b> Involvement of patients, carers, or the public in shaping the question, outcomes, conduct, or dissemination.</li>
+          <li><b>Multistakeholder engagement.</b> Input from clinicians and other intended end users, data stewards, informaticians, health system leaders, developers, or regulators, and where in the lifecycle it occurred.</li>
+          <li><b>Post-deployment monitoring &amp; model drift.</b> Anticipated performance monitoring, drift detection, and what would prompt re-training.</li>
+          <li><b>Traceability.</b> Audit logs, version control for models and datasets, and records of model updates.</li>
+          <li><b>Model cards.</b> An existing or planned model card, referenced here and included as an appendix.</li>
         </ul>
       </div></details>
       <details class="item"><summary><span class="num">16</span><span class="ttl">References</span><span class="chev">›</span></summary><div class="body">Cited literature and guidance documents.</div></details>
@@ -825,7 +825,7 @@
     <section class="blk" id="versions">
       <p class="kicker" style="font-size: 20px; margin-bottom: 26px">Version history</p>
       <div class="ver">
-        <div class="v"><span class="vn">v0.3</span><span class="vd">Adds an optional <b>Other considerations</b> section, confirms the scope as <b>observational designs</b>, and expands the evaluation guidance — ground truth, large language models and agentic AI, data governance, and model version control.<span class="vrev">Revised 10 August 2026 to add authoring-team feedback missed at release. Please replace copies downloaded before this date.</span></span><span class="badge cur">Current</span></div>
+        <div class="v"><span class="vn">v0.3</span><span class="vd">Adds an optional <b>Other considerations</b> section, confirms the scope as <b>observational designs</b>, and expands the evaluation guidance to cover ground truth, large language models and agentic AI, data governance, and model version control.<span class="vrev">Revised 10 August 2026 to add authoring-team feedback missed at release. Please replace copies downloaded before this date.</span></span><span class="badge cur">Current</span></div>
         <div class="v"><span class="vn">v0.2</span><span class="vd">Released for community feedback.</span><a class="vdl" href="assets/AI4HM-Protocol-Template-v0.2.docx" download="">↓ .docx</a><span class="badge old">Archived</span></div>
         <div class="v"><span class="vn">v0.1</span><span class="vd">Initial internal draft.</span><span class="badge old">Archived</span></div>
       </div>
